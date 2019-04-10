@@ -1,7 +1,7 @@
 # mysql主从
 ### 主数据库
 * 创建 MYSQL master 容器
-docker run --name mysql-master -itd -p 3306:3306 -v /www/data:/data ucse/mysql
+docker run --name mysql-master -itd -p 3306:3306 -v /www/data:/data registry.cn-beijing.aliyuncs.com/dxq_docker/mysql
 
 * 查看 master 状态
 docker exec -it mysql-master bash
