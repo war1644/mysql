@@ -47,5 +47,5 @@ EOF
   /usr/bin/mysqld --user=mysql --bootstrap --datadir=/data/mysql/data/ --verbose=0 < $tfile
   rm -f $tfile
 fi
-
-exec /usr/bin/mysqld --innodb-flush-method=fsync --user=mysql --datadir=/data/mysql/data --console
+# --innodb-flush-method=fsync
+exec /usr/bin/mysqld --user=mysql --datadir=/data/mysql/data --console
