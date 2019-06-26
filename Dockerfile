@@ -1,6 +1,7 @@
 FROM registry.cn-beijing.aliyuncs.com/dxq_docker/base
 LABEL author=dxq1994@gmail.com
-RUN apk add --no-cache mysql && \
+# 回滚10.1.22可能解决共享卷问题
+RUN apk add --no-cache mariadb=10.1.22 && \
 	addgroup mysql mysql
 	
 EXPOSE 3306
