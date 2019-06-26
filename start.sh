@@ -4,11 +4,11 @@ MYSQL_DATABASE=${MYSQL_DATABASE:-""}
 MYSQL_USER=${MYSQL_USER:-""}
 MYSQL_PASSWORD=${MYSQL_PASSWORD:-""}
 
-if [ -d /data/mysql ]; then
+if [ -d /data/mysql/data ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
   echo "[i] MySQL data directory not found, creating initial DBs"
-  mkdir -p /data/mysql/ /data/mysql/data/ /data/mysql/logs/
+  mkdir -p /data/mysql/data/ /data/mysql/logs/
   chown -R mysql:mysql /data/mysql/
   mysql_install_db --user=mysql --datadir=/data/mysql/data/ > /dev/null
 
