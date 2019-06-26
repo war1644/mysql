@@ -1,7 +1,8 @@
 FROM registry.cn-beijing.aliyuncs.com/dxq_docker/base
 LABEL author=dxq1994@gmail.com
-RUN addgroup mysql mysql && \
-	apk add --no-cache mysql
+RUN apk add --no-cache mysql && \
+	addgroup mysql mysql
+	
 EXPOSE 3306
 COPY start.sh /start.sh
 RUN chmod a+x /start.sh
