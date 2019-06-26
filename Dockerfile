@@ -1,8 +1,7 @@
 FROM registry.cn-beijing.aliyuncs.com/dxq_docker/base
 LABEL author=dxq1994@gmail.com
 # 回滚10.1.22可能解决共享卷问题
-RUN echo http://mirrors.aliyun.com/alpine/v3.7/main >> /etc/apk/repositories && \
-	apk update && apk add --no-cache mariadb-10.1.40-r0 && \
+RUN apk add --no-cache -X https://mirrors.aliyun.com/alpine/v3.7/main mariadb=10.1.40-r0 && \
 	addgroup mysql mysql
 	
 EXPOSE 3306
