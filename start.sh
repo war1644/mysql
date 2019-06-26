@@ -48,4 +48,4 @@ EOF
   rm -f $tfile
 fi
 
-exec /usr/bin/mysqld --user=mysql --datadir=/data/mysql/data --console
+exec /usr/bin/mysqld --innodb-flush-method=fsync --user=mysql --datadir=/data/mysql/data --console
